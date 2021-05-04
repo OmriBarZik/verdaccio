@@ -26,6 +26,7 @@ export default function renderHTML(config, manifest, manifestFiles, req, res) {
   const language = config?.i18n?.web ?? DEFAULT_LANGUAGE;
   const darkMode = config?.web?.darkMode ?? false;
   const title = config?.web?.title ?? WEB_TITLE;
+  const login = Boolean(config?.web?.login) ?? true;
   const scope = config?.web?.scope ?? '';
   // FIXME: logo URI is incomplete
   let logoURI = config?.web?.logo ?? '';
@@ -49,6 +50,7 @@ export default function renderHTML(config, manifest, manifestFiles, req, res) {
     primaryColor,
     version,
     logoURI,
+    login,
     pkgManagers,
     title,
     scope,
