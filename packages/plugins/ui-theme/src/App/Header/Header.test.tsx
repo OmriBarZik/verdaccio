@@ -152,7 +152,7 @@ describe('<Header /> component with logged in state', () => {
         </AppContextProvider>
       </Router>
     );
-  
+
     expect(screen.queryByTestId('header--button-login')).not.toBeInTheDocument();
   });
 
