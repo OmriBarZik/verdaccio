@@ -139,7 +139,7 @@ describe('<Header /> component with logged in state', () => {
     expect(hasRegistrationInfoModalBeenRemoved).not.toBeDefined();
   });
 
-  test('should hide login if is disabled', async () => {
+  test('should hide login if is disabled', () => {
     // @ts-expect-error
     window.__VERDACCIO_BASENAME_UI_OPTIONS = {
       base: 'foo',

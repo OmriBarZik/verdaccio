@@ -33,7 +33,9 @@ export function webAPI(config: Config, auth: IAuth, storage: IStorageHandler): R
   addReadmeWebApi(route, storage, auth);
   addSidebarWebApi(route, config, storage, auth);
   addSearchWebApi(route, storage, auth);
-  addUserAuthApi(route, auth, config);
+  if (!config?.web?.login && config?.web?.login !== false) {
+    addUserAuthApi(route, auth, config);
+  }
   // What are you looking for? logout? client side will remove token when user click logout,
   // or it will auto expire after 24 hours.
   // This token is different with the token send to npm client.
